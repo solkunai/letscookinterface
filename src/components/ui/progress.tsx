@@ -9,13 +9,13 @@ const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
 >(({ className, value, ...props }, ref) => {
-  const [indicatorPosition, setIndicatorPosition] = React.useState(0);
+  const [indicatorWidth, setIndicatorWidth] = React.useState(0);
 
   React.useEffect(() => {
     const progressValue = value || 0;
-    // This creates the back and forth (ping-pong) effect
-    const position = Math.sin(progressValue / 100 * Math.PI) * 100;
-    setIndicatorPosition(100 - position);
+    // Creates a back-and-forth triangular wave from 0 to 100 and back to 0
+    const triangularWave = Math.abs((progressValue % 200) - 100);
+    setIndicatorWidth(triangularWave);
   }, [value]);
 
 
@@ -29,8 +29,8 @@ const Progress = React.forwardRef<
       {...props}
     >
       <ProgressPrimitive.Indicator
-        className="h-full w-full flex-1 bg-primary transition-transform duration-500 ease-linear"
-        style={{ transform: `translateX(-${indicatorPosition}%)` }}
+        className="h-full w-full flex-1 bg-primary transition-all duration-200 ease-linear"
+        style={{ width: `${indicatorWidth}%` }}
       />
     </ProgressPrimitive.Root>
   )

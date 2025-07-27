@@ -10,8 +10,8 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prev) => (prev + 1) % 100);
-    }, 20); // Faster interval for smoother animation
+      setProgress((prev) => (prev + 1));
+    }, 20);
     return () => clearInterval(timer);
   }, []);
 
