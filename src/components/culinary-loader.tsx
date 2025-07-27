@@ -35,14 +35,14 @@ export function CulinaryLoader() {
           <path
             d="M70 100 C 40 100, 40 60, 80 50 C 90 45, 110 45, 120 50 C 160 60, 160 100, 130 100 Z"
             fill="hsl(var(--background))"
-            stroke="hsl(var(--primary))"
+            stroke="hsl(var(--foreground))"
             strokeWidth="5"
             strokeLinejoin="round"
           />
            <path
             d="M60 150 Q50 150 50 140 L50 110 Q50 100 60 100 L140 100 Q150 100 150 110 L150 140 Q150 150 140 150 Z"
             fill="hsl(var(--background))"
-            stroke="hsl(var(--primary))"
+            stroke="hsl(var(--foreground))"
             strokeWidth="5"
             strokeLinejoin="round"
           />
@@ -57,6 +57,10 @@ export function CulinaryLoader() {
           <span
             className="absolute block w-1.5 h-6 bg-muted-foreground/30 rounded-full animate-steam"
             style={{ left: '52%', animationDelay: '0.7s' }}
+          ></span>
+          <span
+            className="absolute block w-1 h-3 bg-muted-foreground/30 rounded-full animate-steam"
+            style={{ left: '55%', animationDelay: '1.2s' }}
           ></span>
         </div>
       </div>
