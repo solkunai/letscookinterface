@@ -103,6 +103,10 @@ export default {
         flicker: {
           '0%, 100%': { transform: 'scale(1, 1)', opacity: '1' },
           '50%': { transform: 'scale(1.05, 0.95)', opacity: '0.8' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
         }
       },
       animation: {
@@ -112,6 +116,7 @@ export default {
         'stir': 'stir 3s ease-in-out infinite',
         'steam': 'steam 3s ease-out infinite',
         'flicker': 'flicker 1.5s ease-in-out infinite',
+        'wiggle': 'wiggle 1s ease-in-out infinite',
       },
     },
   },

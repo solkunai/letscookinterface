@@ -21,16 +21,19 @@ export function CulinaryLoader() {
           {/* Pig Head */}
           <g>
             <circle cx="100" cy="120" r="50" fill="hsl(340 100% 90%)" />
-            <ellipse
-              cx="100"
-              cy="125"
-              rx="25"
-              ry="18"
-              fill="hsl(340 100% 85%)"
-            />
-            {/* Nostrils */}
-            <circle cx="92" cy="125" r="3" fill="hsl(340 60% 50%)" />
-            <circle cx="108" cy="125" r="3" fill="hsl(340 60% 50%)" />
+            {/* Nose */}
+            <g className="animate-wiggle" style={{ transformOrigin: '100px 125px' }}>
+              <ellipse
+                cx="100"
+                cy="125"
+                rx="25"
+                ry="18"
+                fill="hsl(340 100% 85%)"
+              />
+              {/* Nostrils */}
+              <circle cx="92" cy="125" r="3" fill="hsl(340 60% 50%)" />
+              <circle cx="108" cy="125" r="3" fill="hsl(340 60% 50%)" />
+            </g>
             {/* Eyes */}
             <circle cx="85" cy="110" r="4" fill="hsl(0 0% 10%)" />
             <circle cx="115" cy="110" r="4" fill="hsl(0 0% 10%)" />
