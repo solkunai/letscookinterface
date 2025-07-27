@@ -75,4 +75,14 @@
       opacity: 0;
     }
   }
+  @keyframes flicker {
+    0%, 100% { 
+      transform: scaleY(1) scaleX(1);
+      opacity: 1;
+    }
+    50% { 
+      transform: scaleY(0.95) scaleX(1.05);
+      opacity: 0.8;
+    }
+  }
 }
