@@ -25,19 +25,25 @@ export function CulinaryLoader() {
             />
           </g>
           
-          {/* Flame */}
-          <g transform="translate(65, 110)">
+          {/* Stylized Flame */}
+          <g transform="translate(60, 115) scale(1.2)">
             <path 
-              d="M35 50 C 35 50, 55 50, 55 30 C 55 10, 25 10, 25 30 C 25 50, 35 50, 35 50 Z" 
-              fill="hsl(var(--accent))" 
+              d="M40 50 Q 50 40, 60 50 T 40 50"
+              fill="hsl(var(--primary))" 
               className="animate-flicker" 
               style={{ animationDelay: '0s', transformOrigin: '50% 100%' }}
             />
             <path 
-              d="M45 50 C 45 50, 65 50, 65 25 C 65 0, 25 0, 25 25 C 25 50, 45 50, 45 50 Z" 
-              fill="hsl(var(--primary))" 
+              d="M45 50 Q 50 30, 55 50 T 45 50"
+              fill="hsl(var(--accent))" 
               className="animate-flicker" 
-              style={{ animationDelay: '0.2s', transformOrigin: '50% 100%' }}
+              style={{ animationDelay: '0.3s', transformOrigin: '50% 100%' }}
+            />
+             <path 
+              d="M35 50 Q 50 35, 65 50 T 35 50"
+              fill="hsl(var(--primary) / 0.7)" 
+              className="animate-flicker" 
+              style={{ animationDelay: '0.6s', transformOrigin: '50% 100%' }}
             />
           </g>
         </svg>
