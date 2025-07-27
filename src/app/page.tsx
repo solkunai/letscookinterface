@@ -33,7 +33,7 @@ export default function Home() {
         <div 
           className={cn(
             "flex flex-col items-center space-y-4 text-center transition-opacity duration-1000",
-            isLoaded ? "opacity-0" : "opacity-100"
+            isLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
           )}
         >
           <h1 className="font-headline text-3xl md:text-4xl text-foreground">
