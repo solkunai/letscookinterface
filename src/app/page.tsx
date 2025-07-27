@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { CulinaryLoader } from '@/components/culinary-loader';
 import { cn } from '@/lib/utils';
 import { LoadingDots } from '@/components/loading-dots';
+import { ChefHat, Flame, CookingPot } from 'lucide-react';
 
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -24,25 +25,49 @@ const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-const Smoke = ({ style }: { style: React.CSSProperties }) => (
-  <div
-    className="absolute bottom-0 h-24 w-12 rounded-full bg-muted/40 blur-xl"
-    style={{
-      animation: `smoke-rise 8s infinite`,
-      ...style,
-    }}
-  />
-);
+const BackgroundPattern = () => {
+  const [pattern, setPattern] = useState<JSX.Element[]>([]);
+
+  useEffect(() => {
+    const icons = [ChefHat, Flame, CookingPot];
+    const newPattern: JSX.Element[] = [];
+    const size = 64; // size of the grid cell
+    const iconSize = '2rem';
+    
+    if (typeof window !== 'undefined') {
+      const cols = Math.ceil(window.innerWidth / size);
+      const rows = Math.ceil(window.innerHeight / size);
+
+      for (let i = 0; i < cols * rows; i++) {
+        const Icon = icons[i % icons.length];
+        const x = (i % cols) * size;
+        const y = Math.floor(i / cols) * size;
+        newPattern.push(
+          <div
+            key={i}
+            className="absolute text-red-900/40"
+            style={{
+              left: `${x}px`,
+              top: `${y}px`,
+              transform: `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.5})`,
+              transition: 'transform 0.5s ease-in-out',
+            }}
+          >
+            <Icon style={{ width: iconSize, height: iconSize }} />
+          </div>
+        );
+      }
+      setPattern(newPattern);
+    }
+  }, []);
+
+  return <div className="absolute inset-0 z-0 overflow-hidden">{pattern}</div>;
+};
 
 export default function Home() {
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
-      <Smoke style={{ left: '10%', animationDelay: '0s' }} />
-      <Smoke style={{ left: '20%', animationDelay: '3s', width: '4rem', height: '8rem' }} />
-      <Smoke style={{ left: '35%', animationDelay: '1s' }} />
-      <Smoke style={{ right: '10%', animationDelay: '2s', width: '3rem', height: '10rem' }} />
-      <Smoke style={{ right: '25%', animationDelay: '4s' }} />
-      <Smoke style={{ right: '40%', animationDelay: '5.5s', width: '2.5rem' }} />
+      <BackgroundPattern />
 
       <div className="z-10 flex flex-col items-center justify-center space-y-8">
         <CulinaryLoader />
