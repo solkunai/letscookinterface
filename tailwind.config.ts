@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ["'PT Sans'", 'sans-serif'],
+        headline: ["'Playfair Display'", 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +88,25 @@ export default {
             height: '0',
           },
         },
+        bob: {
+          '0%, 100%': { transform: 'translateY(-10%)' },
+          '50%': { transform: 'translateY(0)' },
+        },
+        stir: {
+            '0%, 100%': { transform: 'rotate(-15deg)' },
+            '50%': { transform: 'rotate(15deg)' },
+        },
+        steam: {
+            '0%': { transform: 'translateY(0) scaleX(1)', opacity: '0.5' },
+            '100%': { transform: 'translateY(-80px) scaleX(0.2)', opacity: '0' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'bob': 'bob 2s ease-in-out infinite',
+        'stir': 'stir 3s ease-in-out infinite',
+        'steam': 'steam 3s ease-out infinite',
       },
     },
   },
