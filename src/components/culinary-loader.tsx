@@ -9,47 +9,30 @@ export function CulinaryLoader() {
             filter: 'drop-shadow(0 6px 8px rgba(0,0,0,0.15))',
           }}
         >
-          {/* Flame behind hat */}
-          <g className="origin-bottom transform scale-110 translate-y-2">
+          <g className="origin-bottom transform scale-125">
             <path
-              d="M100 90 C 80 40, 120 40, 100 20 C 100 40, 110 70, 100 90 Z"
+              d="M100 150 C 70 100, 130 100, 100 50 C 100 100, 115 130, 100 150 Z"
               fill="hsl(var(--primary))"
               className="animate-flicker"
               style={{ animationDuration: '1.2s' }}
             />
             <path
-              d="M100 90 C 90 60, 80 70, 85 45 C 90 65, 100 75, 100 90 Z"
+              d="M100 150 C 90 120, 80 130, 85 105 C 90 125, 100 135, 100 150 Z"
               fill="hsl(var(--accent))"
               className="animate-flicker"
               style={{ animationDelay: '0.3s', animationDuration: '1.5s' }}
             />
-            <path
-              d="M100 90 C 110 60, 120 70, 115 45 C 110 65, 100 75, 100 90 Z"
+             <path
+              d="M100 150 C 110 120, 120 130, 115 105 C 110 125, 100 135, 100 150 Z"
               fill="hsl(var(--accent))"
               className="animate-flicker"
               style={{ animationDelay: '0.6s', animationDuration: '1.8s' }}
             />
           </g>
-
-          {/* Chef's Hat */}
-          <path
-            d="M70 100 C 40 100, 40 60, 80 50 C 90 45, 110 45, 120 50 C 160 60, 160 100, 130 100 Z"
-            fill="hsl(var(--background))"
-            stroke="hsl(var(--foreground))"
-            strokeWidth="5"
-            strokeLinejoin="round"
-          />
-           <path
-            d="M60 150 Q50 150 50 140 L50 110 Q50 100 60 100 L140 100 Q150 100 150 110 L150 140 Q150 150 140 150 Z"
-            fill="hsl(var(--background))"
-            stroke="hsl(var(--foreground))"
-            strokeWidth="5"
-            strokeLinejoin="round"
-          />
         </svg>
 
         {/* Smoke animation */}
-        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-full h-full">
+        <div className="absolute top-8 left-1/2 -translate-x-1/2 w-full h-full">
           <span
             className="absolute block w-1 h-4 bg-muted-foreground/30 rounded-full animate-steam"
             style={{ left: '48%', animationDelay: '0s' }}
