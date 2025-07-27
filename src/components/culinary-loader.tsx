@@ -1,25 +1,51 @@
 export function CulinaryLoader() {
   return (
     <div className="relative flex items-center justify-center h-48 w-64">
-      <div className="relative w-32 h-48">
+      <div
+        className="relative w-48 h-48 animate-bob"
+        style={{
+          filter: 'drop-shadow(0 6px 12px hsla(var(--primary)/0.4))',
+        }}
+      >
         <svg
-          viewBox="0 0 384 512"
+          viewBox="0 0 200 200"
           className="w-full h-full"
-          style={{
-            filter: 'drop-shadow(0 6px 12px hsla(var(--primary)/0.4))',
-          }}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <g className="animate-bob">
-            <path
-              fill="hsl(var(--accent))"
-              d="M281.5 32C281.5 32 248.3 151.2 248.3 224.2C248.3 297.2 301.9 352 384 352C384 352 384 480 281.5 480C179 480 95.8 402 95.8 320C95.8 238 128.5 32 281.5 32Z"
-              transform="translate(-60, 0)"
+          <defs>
+            <clipPath id="chefHatPath">
+              <path d="M 60,80 C 40,80 40,50 60,50 C 70,40 90,40 100,50 C 110,40 130,40 140,50 C 160,50 160,80 140,80 Z" />
+            </clipPath>
+          </defs>
+
+          {/* Pig Head */}
+          <g>
+            <circle cx="100" cy="120" r="50" fill="hsl(340 100% 90%)" />
+            <ellipse
+              cx="100"
+              cy="125"
+              rx="25"
+              ry="18"
+              fill="hsl(340 100% 85%)"
             />
+            {/* Nostrils */}
+            <circle cx="92" cy="125" r="3" fill="hsl(340 60% 50%)" />
+            <circle cx="108" cy="125" r="3" fill="hsl(340 60% 50%)" />
+            {/* Eyes */}
+            <circle cx="85" cy="110" r="4" fill="hsl(0 0% 10%)" />
+            <circle cx="115" cy="110" r="4" fill="hsl(0 0% 10%)" />
+             {/* Ears */}
+            <path d="M 65 90 A 20 20 0 0 1 50 70 C 55 85, 60 90, 65 90 Z" fill="hsl(340 100% 90%)" stroke="hsl(340 100% 85%)" strokeWidth="2"/>
+            <path d="M 135 90 A 20 20 0 0 0 150 70 C 145 85, 140 90, 135 90 Z" fill="hsl(340 100% 90%)" stroke="hsl(340 100% 85%)" strokeWidth="2"/>
+          </g>
+
+          {/* Chef Hat */}
+          <g>
             <path
-              fill="hsl(var(--primary))"
-              d="M0 256C0 256 32.3 128.3 128.3 128.3C224.3 128.3 256 256 256 256C256 256 224.3 384.3 128.3 384.3C32.3 384.3 0 256 0 256Z"
-              transform="translate(10, -80) scale(0.6)"
+              d="M 60,80 C 40,80 40,50 60,50 C 70,40 90,40 100,50 C 110,40 130,40 140,50 C 160,50 160,80 140,80 Z"
+              fill="hsl(0 0% 100%)"
             />
+            <rect x="60" y="75" width="80" height="10" fill="hsl(0 0% 100%)" />
           </g>
         </svg>
       </div>
