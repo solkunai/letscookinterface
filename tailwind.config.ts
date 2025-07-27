@@ -117,7 +117,11 @@ export default {
             transform: 'none',
             animationTimingFunction: 'cubic-bezier(0,0,0.2,1)'
           }
-        }
+        },
+        shimmer: {
+          'from': { backgroundPosition: '200% 0' },
+          'to': { backgroundPosition: '-200% 0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -128,6 +132,7 @@ export default {
         'flicker': 'flicker 1.5s ease-in-out infinite',
         'wiggle': 'wiggle 1s ease-in-out infinite',
         'bounce': 'bounce 1s infinite',
+        'shimmer': 'shimmer 4s linear infinite',
       },
     },
   },
