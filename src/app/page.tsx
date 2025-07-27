@@ -45,9 +45,9 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-8 flex items-center space-x-6 text-muted-foreground">
-          <a href="https://twitter.com/letscook_sol" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
+          <a href="https://twitter.com/letscook_fun" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
             <XIcon className="h-5 w-5" />
-            <span>@letscook_sol</span>
+            <span>@letscook_fun</span>
           </a>
           <a href="https://discord.gg/KFHdB3qm" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
              <DiscordIcon className="h-5 w-5" />
