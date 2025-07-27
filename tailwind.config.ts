@@ -99,6 +99,10 @@ export default {
         steam: {
             '0%': { transform: 'translateY(0) scaleX(1)', opacity: '0.5' },
             '100%': { transform: 'translateY(-80px) scaleX(0.2)', opacity: '0' },
+        },
+        flicker: {
+          '0%, 100%': { transform: 'scale(1, 1)', opacity: '1' },
+          '50%': { transform: 'scale(1.05, 0.95)', opacity: '0.8' },
         }
       },
       animation: {
@@ -107,6 +111,7 @@ export default {
         'bob': 'bob 2s ease-in-out infinite',
         'stir': 'stir 3s ease-in-out infinite',
         'steam': 'steam 3s ease-out infinite',
+        'flicker': 'flicker 1.5s ease-in-out infinite',
       },
     },
   },
