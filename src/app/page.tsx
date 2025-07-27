@@ -31,17 +31,15 @@ const BackgroundPattern = () => {
   useEffect(() => {
     const icons = [ChefHat, Flame, CookingPot];
     const newPattern: JSX.Element[] = [];
-    const size = 64; // size of the grid cell
     const iconSize = '2rem';
+    const numIcons = 50;
     
     if (typeof window !== 'undefined') {
-      const cols = Math.ceil(window.innerWidth / size);
-      const rows = Math.ceil(window.innerHeight / size);
-
-      for (let i = 0; i < cols * rows; i++) {
+      const { innerWidth, innerHeight } = window;
+      for (let i = 0; i < numIcons; i++) {
         const Icon = icons[i % icons.length];
-        const x = (i % cols) * size;
-        const y = Math.floor(i / cols) * size;
+        const x = Math.random() * innerWidth;
+        const y = Math.random() * innerHeight;
         newPattern.push(
           <div
             key={i}
@@ -49,7 +47,7 @@ const BackgroundPattern = () => {
             style={{
               left: `${x}px`,
               top: `${y}px`,
-              transform: `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.5})`,
+              transform: `scale(${Math.random() * 0.5 + 0.5})`,
               transition: 'transform 0.5s ease-in-out',
             }}
           >
