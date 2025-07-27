@@ -107,7 +107,7 @@
       opacity: 0;
     }
     20% {
-      opacity: 0.3;
+      opacity: 0.5;
     }
     100% {
       transform: translateY(-200px) scale(2.5);

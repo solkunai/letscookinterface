@@ -26,7 +26,7 @@ const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Smoke = ({ style }: { style: React.CSSProperties }) => (
   <div
-    className="absolute bottom-0 h-24 w-12 rounded-full bg-muted/20 blur-xl"
+    className="absolute bottom-0 h-24 w-12 rounded-full bg-muted/40 blur-xl"
     style={{
       animation: `smoke-rise 8s infinite`,
       ...style,
