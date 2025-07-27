@@ -9,7 +9,7 @@ export function CulinaryLoader() {
             filter: 'drop-shadow(0 8px 12px rgba(0,0,0,0.2))',
           }}
         >
-          <g transform="translate(20, 0) scale(1.3)">
+          <g transform="translate(10, 20) scale(1.4)">
             <path
               d="M100 150 C 70 100, 130 100, 100 50 C 100 100, 115 130, 100 150 Z"
               fill="hsl(var(--primary))"

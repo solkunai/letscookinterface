@@ -23,8 +23,6 @@ export default function Home() {
     };
   }, []);
 
-  const isLoaded = progress >= 100;
-
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
       <div className="flex flex-col items-center justify-center space-y-8">
@@ -33,7 +31,6 @@ export default function Home() {
         <div 
           className={cn(
             "flex flex-col items-center space-y-4 text-center transition-opacity duration-1000",
-            isLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
           )}
         >
           <h1 className="font-headline text-3xl md:text-4xl text-foreground">
