@@ -9,14 +9,29 @@ export function CulinaryLoader() {
             filter: 'drop-shadow(0 6px 8px rgba(0,0,0,0.15))',
           }}
         >
+          {/* Flame behind hat */}
+          <g className="origin-bottom transform scale-110 translate-y-2">
+            <path
+              d="M100 90 C 80 40, 120 40, 100 20 C 100 40, 110 70, 100 90 Z"
+              fill="hsl(var(--primary))"
+              className="animate-flicker"
+              style={{ animationDuration: '1.2s' }}
+            />
+            <path
+              d="M100 90 C 90 60, 80 70, 85 45 C 90 65, 100 75, 100 90 Z"
+              fill="hsl(var(--accent))"
+              className="animate-flicker"
+              style={{ animationDelay: '0.3s', animationDuration: '1.5s' }}
+            />
+            <path
+              d="M100 90 C 110 60, 120 70, 115 45 C 110 65, 100 75, 100 90 Z"
+              fill="hsl(var(--accent))"
+              className="animate-flicker"
+              style={{ animationDelay: '0.6s', animationDuration: '1.8s' }}
+            />
+          </g>
+
           {/* Chef's Hat */}
-          <path
-            d="M60 150 Q50 150 50 140 L50 110 Q50 100 60 100 L140 100 Q150 100 150 110 L150 140 Q150 150 140 150 Z"
-            fill="hsl(var(--background))"
-            stroke="hsl(var(--primary))"
-            strokeWidth="5"
-            strokeLinejoin="round"
-          />
           <path
             d="M70 100 C 40 100, 40 60, 80 50 C 90 45, 110 45, 120 50 C 160 60, 160 100, 130 100 Z"
             fill="hsl(var(--background))"
@@ -24,24 +39,13 @@ export function CulinaryLoader() {
             strokeWidth="5"
             strokeLinejoin="round"
           />
-
-          {/* Flame */}
-          <g className="animate-flicker origin-bottom">
-            <path
-              d="M100 50 C 90 30, 110 30, 100 10 C 100 30, 105 40, 100 50 Z"
-              fill="hsl(var(--primary))"
-            />
-            <path
-              d="M100 50 C 95 35, 85 45, 90 25 C 95 40, 100 45, 100 50 Z"
-              fill="hsl(var(--accent))"
-              style={{ animation: 'flicker 1s ease-in-out infinite 0.2s' }}
-            />
-            <path
-              d="M100 50 C 105 35, 115 45, 110 25 C 105 40, 100 45, 100 50 Z"
-              fill="hsl(var(--accent))"
-              style={{ animation: 'flicker 1s ease-in-out infinite 0.4s' }}
-            />
-          </g>
+           <path
+            d="M60 150 Q50 150 50 140 L50 110 Q50 100 60 100 L140 100 Q150 100 150 110 L150 140 Q150 150 140 150 Z"
+            fill="hsl(var(--background))"
+            stroke="hsl(var(--primary))"
+            strokeWidth="5"
+            strokeLinejoin="round"
+          />
         </svg>
 
         {/* Smoke animation */}
