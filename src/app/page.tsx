@@ -1,20 +1,11 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Progress } from '@/components/ui/progress';
 import { CulinaryLoader } from '@/components/culinary-loader';
 import { cn } from '@/lib/utils';
+import { LoadingDots } from '@/components/loading-dots';
 
 export default function Home() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => (prev + 1));
-    }, 20);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
       <div className="flex flex-col items-center justify-center space-y-8">
@@ -31,7 +22,7 @@ export default function Home() {
           <p className="max-w-sm text-base text-muted-foreground font-body">
             The kitchen is almost ready for your NFT and memecoin recipes.
           </p>
-          <Progress value={progress} className="w-full max-w-xs bg-primary/20 [&>div]:bg-accent" />
+          <LoadingDots />
         </div>
       </div>
     </main>
