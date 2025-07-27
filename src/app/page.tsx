@@ -34,33 +34,24 @@ const BackgroundPattern = () => {
     
     if (typeof window !== 'undefined') {
       const { innerWidth, innerHeight } = window;
-      const numCols = 10;
-      const numRows = 7;
-      const colWidth = innerWidth / numCols;
-      const rowHeight = innerHeight / numRows;
-
-      let iconIndex = 0;
-      for (let col = 0; col < numCols; col++) {
-        const horizontalOffset = (Math.random() - 0.5) * (colWidth / 2);
-        for (let row = 0; row < numRows; row++) {
-          const Icon = icons[row % icons.length];
-          const x = col * colWidth + horizontalOffset;
-          const y = row * rowHeight;
-          newPattern.push(
-            <div
-              key={`${col}-${row}`}
-              className="absolute text-red-900/40"
-              style={{
-                left: `${x}px`,
-                top: `${y}px`,
-                transform: `scale(${Math.random() * 0.4 + 0.6})`,
-              }}
-            >
-              <Icon className="w-8 h-8" />
-            </div>
-          );
-          iconIndex++;
-        }
+      const numIcons = 50;
+      for (let i = 0; i < numIcons; i++) {
+        const Icon = icons[i % icons.length];
+        const x = Math.random() * innerWidth;
+        const y = Math.random() * innerHeight;
+        newPattern.push(
+          <div
+            key={i}
+            className="absolute text-red-900/40"
+            style={{
+              left: `${x}px`,
+              top: `${y}px`,
+              transform: `scale(${Math.random() * 0.4 + 0.6}) rotate(${Math.random() * 360}deg)`,
+            }}
+          >
+            <Icon className="w-8 h-8" />
+          </div>
+        );
       }
       setPattern(newPattern);
     }
