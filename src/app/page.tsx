@@ -24,10 +24,27 @@ const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
+const Smoke = ({ style }: { style: React.CSSProperties }) => (
+  <div
+    className="absolute bottom-0 h-24 w-12 rounded-full bg-muted/20 blur-xl"
+    style={{
+      animation: `smoke-rise 8s infinite`,
+      ...style,
+    }}
+  />
+);
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
-      <div className="flex flex-col items-center justify-center space-y-8">
+    <main className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
+      <Smoke style={{ left: '10%', animationDelay: '0s' }} />
+      <Smoke style={{ left: '20%', animationDelay: '3s', width: '4rem', height: '8rem' }} />
+      <Smoke style={{ left: '35%', animationDelay: '1s' }} />
+      <Smoke style={{ right: '10%', animationDelay: '2s', width: '3rem', height: '10rem' }} />
+      <Smoke style={{ right: '25%', animationDelay: '4s' }} />
+      <Smoke style={{ right: '40%', animationDelay: '5.5s', width: '2.5rem' }} />
+
+      <div className="z-10 flex flex-col items-center justify-center space-y-8">
         <CulinaryLoader />
         
         <div 
