@@ -42,7 +42,6 @@ const BackgroundPattern = () => {
       for (let row = 0; row < numRows; row++) {
         for (let col = 0; col < numCols; col++) {
           const Icon = icons[(row + col) % icons.length];
-          // Add some jitter for a less rigid look
           const x = col * colWidth + colWidth / 2;
           const y = row * rowHeight + rowHeight / 2;
           
@@ -81,7 +80,10 @@ export default function Home() {
             "flex flex-col items-center space-y-4 text-center transition-opacity duration-1000",
           )}
         >
-          <h1 className="font-headline text-4xl md:text-5xl text-foreground font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-shimmer bg-[length:200%_auto]">
+          <h1 
+            className="font-headline text-4xl md:text-5xl text-foreground font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-shimmer bg-[length:200%_auto]"
+            style={{ filter: 'drop-shadow(0 0 10px hsl(var(--primary) / 0.8))' }}
+          >
             Warming up the kitchen...
           </h1>
           <p className="max-w-sm text-base text-muted-foreground font-body">
