@@ -68,41 +68,74 @@ const BackgroundPattern = () => {
 };
 
 export default function Home() {
-  return (
-    <main className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
-      <BackgroundPattern />
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
-      <div className="z-10 flex flex-col items-center justify-center space-y-8">
-        <CulinaryLoader />
-        
-        <div 
-          className={cn(
-            "flex flex-col items-center space-y-4 text-center transition-opacity duration-1000",
-          )}
-        >
-          <h1 
-            className="font-headline text-4xl md:text-5xl text-foreground font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-shimmer bg-[length:200%_auto]"
-            style={{ filter: 'drop-shadow(0 0 10px hsl(var(--primary) / 0.8))' }}
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress(prevProgress => {
+        if (prevProgress >= 100) {
+          clearInterval(timer);
+          setLoading(false);
+          return 100;
+        }
+        return prevProgress + 1;
+      });
+    }, 30);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <main className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
+        <BackgroundPattern />
+
+        <div className="z-10 flex flex-col items-center justify-center space-y-8">
+          <CulinaryLoader />
+          
+          <div 
+            className="flex flex-col items-center space-y-4 text-center"
           >
-            Warming up the kitchen...
-          </h1>
-          <p className="max-w-sm text-base text-muted-foreground font-body">
-            The kitchen is almost ready for your NFT and memecoin recipes.
-          </p>
-          <LoadingDots />
-        </div>
+            <h1 
+              className="font-headline text-4xl md:text-5xl text-foreground font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-shimmer bg-[length:200%_auto]"
+              style={{ filter: 'drop-shadow(0 0 10px hsl(var(--primary) / 0.8))' }}
+            >
+              Warming up the kitchen...
+            </h1>
+            <p className="max-w-sm text-base text-muted-foreground font-body">
+              The kitchen is almost ready for your NFT and memecoin recipes.
+            </p>
+            <div className="w-64 mt-4">
+              <div className="w-full bg-secondary rounded-full h-2.5">
+                <div 
+                  className="bg-accent h-2.5 rounded-full" 
+                  style={{ width: `${progress}%`, transition: 'width 0.1s linear' }}
+                ></div>
+              </div>
+            </div>
+          </div>
 
-        <div className="absolute bottom-8 flex items-center space-x-6 text-muted-foreground">
-          <a href="https://twitter.com/letscook_fun" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
-            <XIcon className="h-5 w-5" />
-            <span>@letscook_fun</span>
-          </a>
-          <a href="https://discord.gg/KFHdB3qm" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
-             <DiscordIcon className="h-5 w-5" />
-            <span>Join Discord</span>
-          </a>
+          <div className="absolute bottom-8 flex items-center space-x-6 text-muted-foreground">
+            <a href="https://twitter.com/letscook_fun" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
+              <XIcon className="h-5 w-5" />
+              <span>@letscook_fun</span>
+            </a>
+            <a href="https://discord.gg/KFHdB3qm" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
+               <DiscordIcon className="h-5 w-5" />
+              <span>Join Discord</span>
+            </a>
+          </div>
         </div>
-      </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-background">
+      <h1 className="font-headline text-5xl text-foreground">Welcome to Culinary Countdown!</h1>
     </main>
   );
 }
+
+    
