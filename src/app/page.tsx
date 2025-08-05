@@ -48,7 +48,7 @@ const BackgroundPattern = () => {
           newPattern.push(
             <div
               key={`${col}-${row}`}
-              className="absolute text-accent/20"
+              className="absolute text-accent/30"
               style={{
                 left: `${x}px`,
                 top: `${y}px`,
