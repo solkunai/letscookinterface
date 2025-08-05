@@ -107,12 +107,7 @@ export default function Home() {
               The kitchen is almost ready for your NFT and memecoin recipes.
             </p>
             <div className="w-64 mt-4">
-              <div className="w-full bg-secondary rounded-full h-2.5">
-                <div 
-                  className="bg-accent h-2.5 rounded-full" 
-                  style={{ width: `${progress}%`, transition: 'width 0.1s linear' }}
-                ></div>
-              </div>
+               <LoadingDots />
             </div>
           </div>
 
@@ -137,3 +132,5 @@ export default function Home() {
     </main>
   );
 }
+
+    
