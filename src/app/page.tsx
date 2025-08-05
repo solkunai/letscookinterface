@@ -69,22 +69,6 @@ const BackgroundPattern = () => {
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress(prevProgress => {
-        if (prevProgress >= 100) {
-          clearInterval(timer);
-          setLoading(false);
-          return 100;
-        }
-        return prevProgress + 1;
-      });
-    }, 30);
-
-    return () => clearInterval(timer);
-  }, []);
 
   if (loading) {
     return (
@@ -132,5 +116,3 @@ export default function Home() {
     </main>
   );
 }
-
-    
