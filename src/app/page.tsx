@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { CulinaryLoader } from '@/components/culinary-loader';
 import { cn } from '@/lib/utils';
 import { LoadingDots } from '@/components/loading-dots';
-import { ChefHat, Flame, CookingPot } from 'lucide-react';
+import { ChefHat, Flame } from 'lucide-react';
 
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -29,30 +29,30 @@ const BackgroundPattern = () => {
   const [pattern, setPattern] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    const icons = [CookingPot, Flame, ChefHat];
+    const icons = [ChefHat, Flame];
     const newPattern: JSX.Element[] = [];
     
     if (typeof window !== 'undefined') {
       const { innerWidth, innerHeight } = window;
       const numCols = 10;
-      const numRows = 6;
+      const numRows = 8;
       const colWidth = innerWidth / numCols;
       const rowHeight = innerHeight / numRows;
 
       for (let row = 0; row < numRows; row++) {
         for (let col = 0; col < numCols; col++) {
-          const Icon = icons[(row + col) % icons.length];
+          const Icon = icons[col % icons.length];
           const x = col * colWidth + colWidth / 2;
           const y = row * rowHeight + rowHeight / 2;
           
           newPattern.push(
             <div
               key={`${col}-${row}`}
-              className="absolute text-red-900/40"
+              className="absolute text-accent/20"
               style={{
                 left: `${x}px`,
                 top: `${y}px`,
-                transform: `translate(-50%, -50%) scale(0.8)`,
+                transform: `translate(-50%, -50%) scale(0.7)`,
               }}
             >
               <Icon className="w-8 h-8" />
