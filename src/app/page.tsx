@@ -77,13 +77,13 @@ export default function Home() {
 
         <div className="z-10 flex flex-col items-center justify-center space-y-8">
           <CulinaryLoader />
-          
-          <div 
-            className="flex flex-col items-center space-y-4 text-center"
-          >
-            <h1 
+
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <h1
               className="font-headline text-4xl md:text-5xl text-foreground font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary animate-shimmer bg-[length:200%_auto]"
-              style={{ filter: 'drop-shadow(0 0 10px hsl(var(--primary) / 0.8))' }}
+              style={{
+                filter: "drop-shadow(0 0 10px hsl(var(--primary) / 0.8))",
+              }}
             >
               Warming up the kitchen...
             </h1>
@@ -91,17 +91,27 @@ export default function Home() {
               The kitchen is almost ready for your NFT and memecoin recipes.
             </p>
             <div className="w-64 mt-4">
-               <LoadingDots />
+              <LoadingDots />
             </div>
           </div>
 
           <div className="absolute bottom-8 flex items-center space-x-6 text-muted-foreground">
-            <a href="https://twitter.com/letscook_fun" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
+            <a
+              href="https://twitter.com/letscook_fun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-foreground transition-colors"
+            >
               <XIcon className="h-5 w-5" />
               <span>@letscook_fun</span>
             </a>
-            <a href="https://discord.gg/KFHdB3qm" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-foreground transition-colors">
-               <DiscordIcon className="h-5 w-5" />
+            <a
+              href="https://discord.gg/HJB7NGdZuM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-foreground transition-colors"
+            >
+              <DiscordIcon className="h-5 w-5" />
               <span>Join Discord</span>
             </a>
           </div>
