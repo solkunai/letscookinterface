@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Culinary Countdown',
+  title: "Let's Cook",
   description: 'The kitchen is almost ready for your NFT and memecoin recipes.',
 };
 
