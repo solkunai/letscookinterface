@@ -8,7 +8,7 @@
 - Loading Bar: Implement a loading bar to visually indicate the progress of the loading process.
 
 ## Style Guidelines:
-
+- 
 - Primary color: Blue to evoke a sense of culinary richness and anticipation.
 - Background color: Red, subtly desaturated, to create a clean and appetizing backdrop.
 - Accent color: Burnt Orange (#CC6633) to highlight loading progress and call attention to important messages.
